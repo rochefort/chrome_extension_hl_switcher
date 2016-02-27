@@ -4,14 +4,14 @@ chrome.browserAction.onClicked.addListener(function(tab) {
     return;
   }
 
-  var hlPram = 'hl=' + localStorage.hl;
+  var hlParam = 'hl=' + localStorage.hl;
   if (url.search.match(/hl=/)) {
     // Replace hl
-    url.search = url.search.replace(/&?hl=[^&\s]*/mg, hlPram);
+    url.search = url.search.replace(/&?hl=[^&\s]*/mg, hlParam);
   } else {
     // Append hl
     var querySign = url.search ? '&' : '?';
-    url.search += (querySign + hlPram);
+    url.search += (querySign + hlParam);
   }
   chrome.tabs.update(tab.id, {url: url.toString()});
 });
