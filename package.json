@@ -1,0 +1,6 @@
+{
+  "name": "hl-switcher",
+  "scripts": {
+    "build": "git archive --format=zip HEAD --worktree-attributes > build/hl-switcher.zip"
+  }
+}
