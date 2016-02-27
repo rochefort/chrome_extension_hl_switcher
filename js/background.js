@@ -4,7 +4,8 @@ chrome.browserAction.onClicked.addListener(function(tab) {
     return;
   }
 
-  var hlParam = 'hl=' + localStorage.hl;
+  var hl = localStorage.hl ? localStorage.hl : 'ja';
+  var hlParam = 'hl=' + hl;
   if (url.search.match('hl=')) {
     // Replace the `hl` parameter with a localStorage value
     if (url.search.match(hlParam)) {
