@@ -5,11 +5,14 @@ chrome.browserAction.onClicked.addListener(function(tab) {
   }
 
   var hlParam = 'hl=' + localStorage.hl;
-  if (url.search.match(/hl=/)) {
-    // Replace hl
+  if (url.search.match('hl=')) {
+    // Replace the `hl` parameter with a localStorage value
+    if (url.search.match(hlParam)) {
+      hlParam = 'hl=en';
+    }
     url.search = url.search.replace(/&?hl=[^&\s]*/mg, hlParam);
   } else {
-    // Append hl
+    // Append the `hl` parameter
     var querySign = url.search ? '&' : '?';
     url.search += (querySign + hlParam);
   }
