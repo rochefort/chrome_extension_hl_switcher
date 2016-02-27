@@ -1,0 +1,35 @@
+body, button, td {
+  font-family: 'Noto Sans', 'Segoe UI', 'Lucida Grande', 'Open Sans', arial,
+      sans-serif;
+  font-size: 12px;
+  color: #303942;
+}
+
+body {
+  background-color: white;
+  font-size: 12px;
+  margin-left: 155px;
+  margin-right: 0px;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+  vertical-align: middle;
+  border-bottom: 1px solid #e0e0e0;
+  -webkit-margin-start: -18px;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 18px;
+  vertical-align: middle;
+}
+
+.message {
+  margin-top: 10px;
+  color: #2c7d3e
+}
