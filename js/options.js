@@ -14,15 +14,12 @@
 
       $('hl').addEventListener('keypress', function(e) {
         if (e.keyCode === 13) {
-          $('save').click();
+          _save();
         }
       });
 
       $('save').addEventListener('click', function() {
-        var hl = $('hl');
-        hl.value = hl.value.toLowerCase();
-        localStorage.hl = hl.value;
-        _setMessage('Options Saved.');
+        _save();
       });
     };
 
@@ -34,10 +31,32 @@
     };
 
     /**
-     * Show message
+     * Save hl
      */
-    var _setMessage = function(message) {
+    var _save = function() {
+      var hl = $('hl');
+      if (!/^[a-zA-z]+$/.test(hl.value)) {
+        _setErrorMessage('Error: only alphabets are allowed.');
+        return;
+      }
+      hl.value = hl.value.toLowerCase();
+      localStorage.hl = hl.value;
+      _setMessage('Option Saved.');
+    };
+
+    /**
+     * Show an error message
+     */
+    var _setErrorMessage = function(message) {
+      _setMessage(message, '#bd3f55');
+    };
+
+    /**
+     * Show a message
+     */
+    var _setMessage = function(message, color) {
       var elm = $('message');
+      elm.style.color = color ? color : '#2c7d3e';
       elm.innerHTML = message;
       setTimeout(function() {
         elm.innerHTML = '';
