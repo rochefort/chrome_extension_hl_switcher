@@ -1,4 +1,17 @@
+chrome.commands.onCommand.addListener(function(command) {
+  console.log(command);
+  if (command === 'switch-hl') {
+    chrome.tabs.query({active: true, lastFocusedWindow: true}, function(tabs) {
+      switchHl(tabs[0]);
+    });
+  }
+});
+
 chrome.browserAction.onClicked.addListener(function(tab) {
+  switchHl(tab);
+});
+
+function switchHl(tab) {
   var url = new URL(tab.url);
   if (!url.protocol.match(/https?/)) {
     return;
@@ -18,4 +31,4 @@ chrome.browserAction.onClicked.addListener(function(tab) {
     url.search += (querySign + hlParam);
   }
   chrome.tabs.update(tab.id, {url: url.toString()});
-});
+}

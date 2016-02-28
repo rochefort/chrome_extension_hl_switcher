@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "hl-switcher",
   "short_name": "hl-switcher",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "switch the `hl(host language)` option on google websites",
   "icons": {
     "16": "images/icon/icon_16.png",
@@ -20,8 +20,18 @@
       "38": "images/icon/icon_38.png"
     }
 	},
+  "commands": {
+    "switch-hl": {
+      "suggested_key": {
+        "default": "Ctrl+H",
+        "mac": "MacCtrl+H"
+      },
+      "description": "Execute hl-switcher"
+    }
+  },
   "options_page": "options.html",
   "permissions": [
+    "tabs",
     "https://*/*",
     "http://*/*"
   ]
