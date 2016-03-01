@@ -16,19 +16,21 @@ function switchHl(tab) {
   if (!url.protocol.match(/https?/)) {
     return;
   }
-
   var hl = localStorage.hl ? localStorage.hl : 'ja';
-  var hlParam = 'hl=' + hl;
-  if (url.search.match('hl=')) {
-    // Replace the `hl` parameter with a localStorage value
-    if (url.search.match(hlParam)) {
-      hlParam = 'hl=en';
-    }
-    url.search = url.search.replace(/&?hl=[^&\s]*/mg, hlParam);
-  } else {
-    // Append the `hl` parameter
-    var querySign = url.search ? '&' : '?';
-    url.search += (querySign + hlParam);
-  }
+  url.search = updateHlParameter(url.search, hl);
   chrome.tabs.update(tab.id, {url: url.toString()});
+}
+
+function updateHlParameter(query, hl) {
+  var re = new RegExp('([?&])hl=(.*?)(&|$)', 'i');
+  var separator = query.indexOf('?') !== -1 ? '&' : '?';
+  var result = query.match(re);
+  if (result) {
+    if (result[2] === hl) {
+      hl = 'en';
+    }
+    return query.replace(re, '$1' + 'hl=' + hl + '$3');
+  } else {
+    return query + separator + 'hl=' + hl;
+  }
 }
