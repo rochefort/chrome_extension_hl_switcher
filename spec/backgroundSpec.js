@@ -1,6 +1,6 @@
 describe("background", function () {
 
-  describe("#switchHl", function () {
+  describe("#switch", function () {
     beforeEach(function () {
       chrome.tabs = { update: function() {} };
       spyOn(chrome.tabs, 'update');
@@ -11,7 +11,7 @@ describe("background", function () {
         tab = {url: url};
       });
       it("update is called once", function () {
-        switchHl(tab);
+        hlSwitcher.switch(tab);
         expect(chrome.tabs.update.calls.count()).toBe(1);
       });
     }
@@ -21,7 +21,7 @@ describe("background", function () {
         tab = {url: 'file:///tmp/some.txt'};
       });
       it("update is not called", function () {
-        switchHl(tab);
+        hlSwitcher.switch(tab);
         expect(chrome.tabs.update.calls.count()).toBe(0);
       });
     });
@@ -41,7 +41,7 @@ describe("background", function () {
     function sharedBehaviorForUpdateHlParameter(inputs) {
       var parameterizedTest = function(expected, query, hl) {
         it(":updateHlParameter('" + query + "', '" + hl + "') == " + expected, function() {
-            expect(updateHlParameter(query, hl)).toBe(expected);
+            expect(hlSwitcher.updateHlParameter(query, hl)).toBe(expected);
         });
       };
       for (var i = 0; i < inputs.length; i++) {
