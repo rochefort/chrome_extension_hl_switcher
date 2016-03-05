@@ -1,4 +1,41 @@
 describe("background", function () {
+
+  describe("#switchHl", function () {
+    beforeEach(function () {
+      chrome.tabs = { update: function() {} };
+      spyOn(chrome.tabs, 'update');
+    });
+
+    function sharedBehaviorForUpdateOnce(url) {
+      beforeEach(function () {
+        tab = {url: url};
+      });
+      it("update is called once", function () {
+        switchHl(tab);
+        expect(chrome.tabs.update.calls.count()).toBe(1);
+      });
+    }
+
+    describe("when protocol is file", function () {
+      beforeEach(function () {
+        tab = {url: 'file:///tmp/some.txt'};
+      });
+      it("update is not called", function () {
+        switchHl(tab);
+        expect(chrome.tabs.update.calls.count()).toBe(0);
+      });
+    });
+
+    describe("when protocol is http", function () {
+      sharedBehaviorForUpdateOnce('http://example.com');
+    });
+
+    describe("when protocol is https", function () {
+      sharedBehaviorForUpdateOnce('https://example.com');
+    });
+
+  });
+
   describe("#updateHlParameter", function () {
 
     function sharedBehaviorForUpdateHlParameter(inputs) {
