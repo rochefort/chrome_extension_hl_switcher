@@ -1,5 +1,5 @@
-[![Build Status](http://img.shields.io/travis/rochefort/chrome_extension_hl_switcher.svg?style=flat-square)](http://travis-ci.org/rochefort/chrome_extension_hl_switcher)
-[![GitHub tag](https://img.shields.io/github/tag/rochefort/chrome_extension_hl_switcher.svg?style=flat-square)]()
+[![Build Status](https://travis-ci.org/rochefort/chrome_extension_hl_switcher.svg?branch=master)](https://travis-ci.org/rochefort/chrome_extension_hl_switcher)
+[![GitHub tag](https://img.shields.io/github/tag/rochefort/chrome_extension_hl_switcher.svg?style=flat)]()
 
 # hl-switcher
 
