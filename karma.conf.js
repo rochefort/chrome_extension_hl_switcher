@@ -86,8 +86,12 @@ module.exports = function(config) {
         }
       },
       browsers: ['chromeTravisCi'],
-      
-    };
+      reporters: ['coverage', 'coveralls'],
+      coverageReporter: {
+        type: 'lcov', // lcov or lcovonly are required for generating lcov.info files
+        dir: 'coverage/'
+      }
+    }
     config.set(configuration);
   }
 }
