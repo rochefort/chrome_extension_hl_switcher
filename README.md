@@ -1,3 +1,6 @@
+[![Build Status](http://img.shields.io/travis/rochefort/chrome_extension_hl_switcher.svg?style=flat-square)](http://travis-ci.org/rochefort/chrome_extension_hl_switcher)
+[![GitHub release](https://img.shields.io/github/release/rochefort/chrome_extension_hl_switcher.svg?style=flat-square)]()
+
 # hl-switcher
 
 switch the `hl(host language)` option on google websites.
