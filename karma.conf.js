@@ -77,3 +77,18 @@ module.exports = function(config) {
     concurrency: Infinity
   })
 }
+
+var configuration = {
+  customLaunchers: {
+    chromeTravisCi: {
+      base: 'Chrome',
+      flags: ['--no-sandbox']
+    }
+  },
+};
+
+if (process.env.TRAVIS) {
+  configuration.browsers = ['chromeTravisCi'];
+}
+
+config.set(configuration);
