@@ -1,5 +1,4 @@
 chrome.commands.onCommand.addListener(function(command) {
-  console.log(command);
   if (command === 'switch-hl') {
     chrome.tabs.query({active: true, lastFocusedWindow: true}, function(tabs) {
       switchHl(tabs[0]);
