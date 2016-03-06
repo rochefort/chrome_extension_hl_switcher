@@ -2,7 +2,8 @@
   "name": "hl-switcher",
   "scripts": {
     "build": "git archive --format=zip HEAD --worktree-attributes > build/hl-switcher.zip",
-    "test": "./node_modules/karma/bin/karma start"
+    "test": "./node_modules/karma/bin/karma start",
+    "test:web": "open ./spec/SpecRunner.html"
   },
   "devDependencies": {
     "eslint-plugin-jasmine": "^1.6.0",
