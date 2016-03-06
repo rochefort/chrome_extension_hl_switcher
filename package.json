@@ -5,6 +5,7 @@
     "test": "./node_modules/karma/bin/karma start"
   },
   "devDependencies": {
+    "eslint-plugin-jasmine": "^1.6.0",
     "jasmine": "~2.4.0",
     "karma": "~0.13.21",
     "karma-chrome-launcher": "~0.2.2",
