@@ -75,7 +75,7 @@ module.exports = function(config) {
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity
-  })
+  });
 
   if (process.env.TRAVIS) {
     var configuration = {
@@ -91,7 +91,7 @@ module.exports = function(config) {
         type: 'lcov', // lcov or lcovonly are required for generating lcov.info files
         dir: 'coverage/'
       }
-    }
+    };
     config.set(configuration);
   }
-}
+};
