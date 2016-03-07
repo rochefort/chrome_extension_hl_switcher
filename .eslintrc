@@ -17,7 +17,7 @@
       "unix"
     ],
     "semi": [
-      "error",
+      2,
       "always"
     ]
   }
