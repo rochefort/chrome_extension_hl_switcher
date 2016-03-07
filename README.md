@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/rochefort/chrome_extension_hl_switcher.svg?branch=master)](https://travis-ci.org/rochefort/chrome_extension_hl_switcher)
+[![Build Status](https://semaphoreci.com/api/v1/rochefort/chrome_extension_hl_switcher/branches/master/shields_badge.svg)](https://semaphoreci.com/rochefort/chrome_extension_hl_switcher)
 [![Coverage Status](https://coveralls.io/repos/github/rochefort/chrome_extension_hl_switcher/badge.svg?branch=master)](https://coveralls.io/github/rochefort/chrome_extension_hl_switcher?branch=master)
 [![GitHub tag](https://img.shields.io/github/tag/rochefort/chrome_extension_hl_switcher.svg?style=flat)]()
 
