@@ -11,10 +11,7 @@
     "process": false
   },
   "rules": {
-    "indent": [
-      "warning",
-      2
-    ],
+    "indent": [1],
     "linebreak-style": [
       "error",
       "unix"
