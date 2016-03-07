@@ -13,7 +13,7 @@
   "rules": {
     "indent": [1],
     "linebreak-style": [
-      "error",
+      2,
       "unix"
     ],
     "semi": [
