@@ -76,22 +76,4 @@ module.exports = function(config) {
     // how many browser should be started simultaneous
     concurrency: Infinity
   });
-
-  if (process.env.TRAVIS) {
-    var configuration = {
-      customLaunchers: {
-        chromeTravisCi: {
-          base: 'Chrome',
-          flags: ['--no-sandbox']
-        }
-      },
-      browsers: ['chromeTravisCi'],
-      reporters: ['coverage', 'coveralls'],
-      coverageReporter: {
-        type: 'lcov', // lcov or lcovonly are required for generating lcov.info files
-        dir: 'coverage/'
-      }
-    };
-    config.set(configuration);
-  }
 };
