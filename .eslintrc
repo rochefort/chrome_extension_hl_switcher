@@ -11,16 +11,13 @@
     "process": false
   },
   "rules": {
-    "indent": [
-      "warning",
-      2
-    ],
+    "indent": [1],
     "linebreak-style": [
-      "error",
+      2,
       "unix"
     ],
     "semi": [
-      "error",
+      2,
       "always"
     ]
   }
