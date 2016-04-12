@@ -14,7 +14,7 @@
     "persistent": false
   },
   "browser_action": {
-    "default_title":  "hl-switcher [Ctrl-h]",
+    "default_title":  "hl-switcher [ctrl-shift-h]",
     "default_icon":   {
       "19": "images/icon/icon_19.png",
       "38": "images/icon/icon_38.png"
@@ -23,8 +23,8 @@
   "commands": {
     "switch-hl": {
       "suggested_key": {
-        "default": "Ctrl+H",
-        "mac": "MacCtrl+H"
+        "default": "Ctrl+Shift+H",
+        "mac": "MacCtrl+Shift+H"
       },
       "description": "Execute hl-switcher"
     }
